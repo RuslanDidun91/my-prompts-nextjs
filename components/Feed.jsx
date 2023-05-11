@@ -21,7 +21,6 @@ const Feed = () => {
   const [searchText, setSearchText] = useState('');
   const [allPosts, setAllPosts] = useState([]);
 
-
   const fetchPosts = async () => {
     const response = await fetch('/api/prompt');
     const data = await response.json();
@@ -35,6 +34,7 @@ const Feed = () => {
   const handleSearchChange = (e) => {
 
   }
+  
   return (
     <section className='feed'>
       <form className='relative w-full flex-center'>
