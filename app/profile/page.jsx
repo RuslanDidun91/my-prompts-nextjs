@@ -4,9 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Profile from "@components/Profile";
 
-
 const MyProfile = () => {
-
   const router = useRouter();
   const { data: session } = useSession();
   const [myPosts, setMyPosts] = useState([]);
@@ -15,7 +13,6 @@ const MyProfile = () => {
     const fetchPosts = async () => {
       const response = await fetch(`/api/users/${session?.user.id}/posts`);
       const data = await response.json();
-
       setMyPosts(data);
     };
 
@@ -38,7 +35,6 @@ const MyProfile = () => {
         });
 
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
-
         setMyPosts(filteredPosts);
       } catch (error) {
         console.log(error);
