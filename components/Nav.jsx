@@ -10,7 +10,6 @@ const Nav = () => {
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
-
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
@@ -19,12 +18,11 @@ const Nav = () => {
     setUpProviders();
   }, [])
 
-
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
-        <Image 
-        src='/assets/images/logo.svg'
+        <Image
+          src='/assets/images/logo.svg'
           className='object-contain'
           alt='app logo'
           width={30}
@@ -127,4 +125,4 @@ const Nav = () => {
   );
 }
 
-export default Nav
+export default Nav;
